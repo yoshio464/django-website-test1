@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+<h1>自己紹介</h1>
+<h2>実績</h2>
+<p>{% now 'Y-m-d' %}までに、{{ totals|intcomma }}個のウェブサイトを立ち上げました。</p>
+<ul>
+{% for skill in skills %}
+<li>{{skill}}</li>
+{% empty %}
+<p>スキルがありません。</p>
+{% endfor %}
+</ul>
+{% endblock %}
